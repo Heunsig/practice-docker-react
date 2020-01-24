@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t heunsig/practice-docker-react -f Dockerfile.dev .
+
+script:
+  - docker run heunsig/practice-docker-react npm run test -- --coverage
+  
